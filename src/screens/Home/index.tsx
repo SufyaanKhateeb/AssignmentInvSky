@@ -1,7 +1,14 @@
-import React from 'react';
-import StockItem from '../../Components/StockItem';
-import data from '../../../assets/stocks.json';
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React from "react";
+import StockItem from "../../components/StockItem";
+import data from "../../../assets/stocks.json";
+import {
+  FlatList,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 
 export type StockItemType = {
   stockSymbol: string;
@@ -16,8 +23,8 @@ const HomeScreen = () => {
     <>
       <FlatList
         data={stocks}
-        keyExtractor={stockItem => stockItem.stockName}
-        renderItem={({item: stockItem}) => <StockItem {...stockItem} />}
+        keyExtractor={(stockItem) => stockItem.stockName}
+        renderItem={({ item: stockItem }) => <StockItem {...stockItem} />}
       />
     </>
   );

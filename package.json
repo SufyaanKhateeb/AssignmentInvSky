@@ -10,22 +10,24 @@
   },
   "dependencies": {
     "@react-native-segmented-control/segmented-control": "^2.4.0",
-    "@shopify/react-native-skia": "^0.1.185",
+    "@shopify/react-native-skia": "^0.1.197",
     "@types/gaussian": "^1.2.0",
     "gaussian": "^1.2.0",
     "react": "^18.2.0",
     "react-native": "^0.71.7",
     "react-native-feather": "^1.1.2",
-    "react-native-gesture-handler": "^2.9.0",
+    "react-native-gesture-handler": "^2.12.0",
+    "react-native-graph": "^1.0.2",
     "react-native-haptic-feedback": "^1.13.1",
     "react-native-pressable-scale": "^1.0.6",
-    "react-native-reanimated": "^3.1.0",
+    "react-native-reanimated": "^3.3.0",
     "react-native-static-safe-area-insets": "^2.2.0",
     "react-native-svg": "^13.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/runtime": "^7.20.0",
+    "@tsconfig/react-native": "^3.0.2",
     "@types/react": "^18.0.24",
     "babel-plugin-module-resolver": "^4.0.0",
     "metro-react-native-babel-preset": "^0.73.9"

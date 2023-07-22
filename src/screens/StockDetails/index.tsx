@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Text from '../../components/Text'
-import { Button, StyleSheet, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import { ChevronLeft } from 'react-native-feather'
 import { Graph } from './Graph'
 import { hapticFeedback } from '../../utils/HapticFeedback'
@@ -13,7 +13,14 @@ const GraphButton = (props: any) => {
       <TouchableOpacity
         style={{ ...styles.graphButtonBase, backgroundColor: 'black' }}
       >
-        <Text style={{ color: 'white' }}>{label}</Text>
+        <Text
+          style={{
+            color: 'white',
+            fontFamily: 'Poppins-Medium',
+          }}
+        >
+          {label}
+        </Text>
       </TouchableOpacity>
     )
   }
@@ -25,17 +32,23 @@ const GraphButton = (props: any) => {
         setPointsCount(pointCount)
       }}
     >
-      <Text>{label}</Text>
+      <Text
+        style={{
+          fontFamily: 'Poppins-Medium',
+        }}
+      >
+        {label}
+      </Text>
     </TouchableOpacity>
   )
 }
 
 const graphButtonDetails = [
   { label: '1D', pointCount: 24 * 60 },
-  { label: '7D', pointCount: 7 * 24 * 60 },
-  { label: '1M', pointCount: 30 * 24 * 60 },
-  { label: '3M', pointCount: 3 * 30 * 24 * 60 },
-  { label: '1Y', pointCount: 12 * 30 * 24 * 60 },
+  { label: '7D', pointCount: 24 * 60 },
+  { label: '1M', pointCount: 24 * 60 },
+  { label: '3M', pointCount: 24 * 60 },
+  { label: '1Y', pointCount: 24 * 60 },
 ]
 
 const StockDetails = () => {
@@ -44,21 +57,27 @@ const StockDetails = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.header}>
-        <View style={styles.backButton}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => hapticFeedback('impactLight')}
+        >
           <ChevronLeft width={30} height={30} color="black" />
-        </View>
+        </TouchableOpacity>
         <View style={styles.headerDetails}>
           <Text style={styles.headerDetailsFirst}>Stock Symbol</Text>
           <Text style={styles.headerDetailsSecond}>Stock Name</Text>
         </View>
       </View>
-      <Text style={styles.priceLable}>$13,223</Text>
-      <Text style={styles.priceDetailsLable}>+ $0.68 (0.1%)</Text>
+      <View>
+        <Text style={styles.priceLable}>$13,223</Text>
+        <Text style={styles.priceDetailsLable}>+ $0.68 (0.1%)</Text>
+      </View>
       <Graph pointsCount={pointsCount} />
       <View style={styles.graphButtonsContainer}>
         {graphButtonDetails.map(({ label, pointCount }) => {
           return (
             <GraphButton
+              key={label}
               label={label}
               pointCount={pointCount}
               selectedRange={selectedRange}
@@ -68,6 +87,42 @@ const StockDetails = () => {
           )
         })}
       </View>
+      <View style={styles.stockInfoContainer}>
+        <View style={styles.stockInfo}>
+          <Text style={{ fontFamily: 'Poppins-Medium' }}>Close Price</Text>
+          <Text style={{ fontFamily: 'Poppins-ExtraBold' }}>25,332.00</Text>
+        </View>
+        <View style={styles.stockInfo}>
+          <Text style={{ fontFamily: 'Poppins-Medium' }}>Last Trade Price</Text>
+          <Text style={{ fontFamily: 'Poppins-ExtraBold' }}>25,373.00</Text>
+        </View>
+        <View style={styles.stockInfo}>
+          <Text style={{ fontFamily: 'Poppins-Medium' }}>Outstanding</Text>
+          <Text style={{ fontFamily: 'Poppins-ExtraBold' }}>
+            856,824,860.00
+          </Text>
+        </View>
+        <View style={styles.stockInfo}>
+          <Text style={{ fontFamily: 'Poppins-Medium' }}>Market Value</Text>
+          <Text style={{ fontFamily: 'Poppins-ExtraBold' }}>
+            489,856,924,860.00
+          </Text>
+        </View>
+      </View>
+      <TouchableOpacity
+        style={styles.addToPortfolioButton}
+        onPress={() => hapticFeedback('impactLight')}
+      >
+        <Text
+          style={{
+            fontFamily: 'Poppins-Medium',
+            fontSize: 18,
+            color: 'white',
+          }}
+        >
+          Add to PortFolio
+        </Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -75,6 +130,10 @@ const StockDetails = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: 'white',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
   },
   header: {
     display: 'flex',
@@ -108,6 +167,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     fontFamily: 'Poppins-ExtraBold',
     fontSize: 40,
+    lineHeight: 45,
   },
   priceDetailsLable: {
     paddingHorizontal: 30,
@@ -127,6 +187,27 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  stockInfoContainer: {
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+    display: 'flex',
+    gap: 5,
+  },
+  stockInfo: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  addToPortfolioButton: {
+    marginHorizontal: 30,
+    borderRadius: 10,
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
   },
 })
 

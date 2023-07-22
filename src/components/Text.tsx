@@ -1,10 +1,21 @@
-import React from 'react'
-import { Text } from 'react-native'
-export default (props: any) => (
-  <Text
-    {...props}
-    style={{ fontFamily: 'Poppins-Regular', color: 'black', ...props.style }}
-  >
-    {props.children}
-  </Text>
-)
+import React, { ReactNode } from 'react'
+import { Text as RNText } from 'react-native'
+import { TextStyle } from 'react-native'
+
+const Text = (props: { style: TextStyle; children: ReactNode }) => {
+  return (
+    <RNText
+      {...props}
+      style={{
+        fontFamily: 'Poppins-Regular',
+        color: 'black',
+        // paddingTop: 4,
+        ...props.style,
+      }}
+    >
+      {props.children}
+    </RNText>
+  )
+}
+
+export default Text
