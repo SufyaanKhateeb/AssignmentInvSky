@@ -1,0 +1,81 @@
+{
+    "stocks": [
+        {
+            "stockSymbol": "DJIA",
+            "stockName": "Dow Jones Industries",
+            "stockGraphDetails": "",
+            "currentPrice": 255585.69,
+            "percentageGain": -1.01
+        },
+        {
+            "stockSymbol": "AAPL",
+            "stockName": "Apple Inc.",
+            "stockGraphDetails": "",
+            "currentPrice": 150.42,
+            "percentageGain": 2.15
+        },
+        {
+            "stockSymbol": "GOOGL",
+            "stockName": "Alphabet Inc.",
+            "stockGraphDetails": "",
+            "currentPrice": 2810.67,
+            "percentageGain": 1.85
+        },
+        {
+            "stockSymbol": "MSFT",
+            "stockName": "Microsoft Corporation",
+            "stockGraphDetails": "",
+            "currentPrice": 305.04,
+            "percentageGain": -0.72
+        },
+        {
+            "stockSymbol": "AMZN",
+            "stockName": "Amazon.com Inc.",
+            "stockGraphDetails": "",
+            "currentPrice": 3546.56,
+            "percentageGain": 0.95
+        },
+        {
+            "stockSymbol": "TSLA",
+            "stockName": "Tesla Inc.",
+            "stockGraphDetails": "",
+            "currentPrice": 717.23,
+            "percentageGain": 1.55
+        },
+        {
+            "stockSymbol": "NVDA",
+            "stockName": "NVIDIA Corporation",
+            "stockGraphDetails": "",
+            "currentPrice": 224.36,
+            "percentageGain": 3.20
+        },
+        {
+            "stockSymbol": "JPM",
+            "stockName": "JPMorgan Chase & Co.",
+            "stockGraphDetails": "",
+            "currentPrice": 154.77,
+            "percentageGain": -0.82
+        },
+        {
+            "stockSymbol": "NFLX",
+            "stockName": "Netflix Inc.",
+            "stockGraphDetails": "",
+            "currentPrice": 532.11,
+            "percentageGain": 1.10
+        },
+        {
+            "stockSymbol": "V",
+            "stockName": "Visa Inc.",
+            "stockGraphDetails": "",
+            "currentPrice": 228.48,
+            "percentageGain": 0.45
+        },
+        {
+            "stockSymbol": "PG",
+            "stockName": "Procter & Gamble Co.",
+            "stockGraphDetails": "",
+            "currentPrice": 142.32,
+            "percentageGain": 0.65
+        }
+    ]
+}
