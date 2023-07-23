@@ -16,5 +16,6 @@ export const getStockDetailsFromDS = async (stockId: string) => {
     return stockDetails;
   } catch (e) {
     console.log(e);
+    return;
   }
 };
