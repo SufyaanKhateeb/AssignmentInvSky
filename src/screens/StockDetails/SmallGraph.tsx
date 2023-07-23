@@ -1,19 +1,16 @@
 import React, { useMemo } from "react";
 import { View, StyleSheet } from "react-native";
 import { LineGraph } from "react-native-graph";
-// import type { GraphRange } from '../../../../src/LineGraphProps'
 import { SelectionDot } from "../../components/CustomSelectionDot";
 import { generateRandomGraphData } from "../../data/GraphData";
 import { useColors } from "../../hooks/useColors";
 import { hapticFeedback } from "../../utils/HapticFeedback";
 
-const COLOR = "#000";
-const GRADIENT_FILL_COLORS = ["#0000005D", "#0000004D", "#00000000"];
-
-export function Graph({ pointsCount }: { pointsCount: number }) {
+export function SmallGraph({ color }: { color: string }) {
   const colors = useColors();
+  const GRADIENT_FILL_COLORS = [color + "5D", color + "4D", color + "00"];
 
-  const points = generateRandomGraphData(pointsCount);
+  const points = generateRandomGraphData(24);
 
   const highestDate = useMemo(
     () =>
@@ -45,17 +42,13 @@ export function Graph({ pointsCount }: { pointsCount: number }) {
   }, [highestDate, points]);
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <View style={[styles.container, { backgroundColor: "transparent" }]}>
       <LineGraph
         style={styles.graph}
         animated={true}
-        color={COLOR}
+        color={color}
         points={points}
-        gradientFillColors={GRADIENT_FILL_COLORS}
-        enablePanGesture={true}
-        onGestureStart={() => hapticFeedback("impactLight")}
-        SelectionDot={SelectionDot}
-        focusable={false}
+        // gradientFillColors={GRADIENT_FILL_COLORS}
       />
     </View>
   );
@@ -66,9 +59,11 @@ const styles = StyleSheet.create({
     // flex: 1,
   },
   graph: {
+    backgroundColor: "transparent",
     alignSelf: "center",
-    width: "100%",
-    aspectRatio: 1.6,
+    // width: "100%",
+    width:100,
+    aspectRatio: 2,
     marginBottom: 20,
   },
 });

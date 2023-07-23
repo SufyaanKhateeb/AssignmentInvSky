@@ -1,7 +1,14 @@
 import React from "react";
 import { Text as RNText } from "react-native";
+import { TextStyle } from "react-native";
+import { ReactNode } from "react";
 
-const Text = (props: any) => {
+type propsType = {
+  style?: TextStyle;
+  children?: ReactNode;
+};
+
+const Text = (props: propsType) => {
   return (
     <RNText
       {...props}

@@ -2,13 +2,13 @@ import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
-  Home: undefined;
+  Root: undefined;
   StockDetails: { stockId: string };
 };
 
 export type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  "Home"
+  "Root"
 >;
 
 export type StockDetailsScreenNavigationProp = NativeStackNavigationProp<

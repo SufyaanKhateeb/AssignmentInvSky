@@ -2,7 +2,7 @@ import * as React from "react";
 import { StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
-import Navigation from "./navigation";
+import Navigation from "./navigation/StackNavigator";
 
 export default function App() {
   return (

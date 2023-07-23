@@ -14,7 +14,7 @@ import { useRoute } from "@react-navigation/native";
 import {
   StockDetailsScreenNavigationProp,
   StockDetailsScreenRouteProp,
-} from "../../navigation/types";
+} from "../../navigation/StackNavigator/types";
 import { getStockDetailsFromDS } from "../../services/api";
 
 const GraphButton = (props: any) => {
@@ -56,11 +56,11 @@ const GraphButton = (props: any) => {
 };
 
 const graphButtonDetails = [
-  { label: "1D", pointCount: 24 * 60 },
-  { label: "7D", pointCount: 24 * 60 },
-  { label: "1M", pointCount: 24 * 60 },
-  { label: "3M", pointCount: 24 * 60 },
-  { label: "1Y", pointCount: 24 * 60 },
+  { label: "1D", pointCount: 24 },
+  { label: "7D", pointCount: 7 * 24 },
+  { label: "1M", pointCount: 30 * 24 },
+  { label: "3M", pointCount: 90 * 24 },
+  { label: "1Y", pointCount: 365 * 24 },
 ];
 
 type StockDetailsType = {
@@ -71,8 +71,8 @@ type StockDetailsType = {
 } | null;
 
 const StockDetails = () => {
-  const [pointsCount, setPointsCount] = useState(30 * 24 * 60);
-  const [selectedRange, setSelectedRange] = useState("1D");
+  const [pointsCount, setPointsCount] = useState(30 * 24);
+  const [selectedRange, setSelectedRange] = useState("1M");
   const [stockDetails, setStockDetails] = useState<StockDetailsType>(null);
   const [isLoading, setIsLoading] = useState(false);
   const route: StockDetailsScreenRouteProp = useRoute();
