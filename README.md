@@ -1,6 +1,6 @@
 1. `git clone` this repo
 2. `yarn install`.
-3. For specify libraries such as react-native-reanimated and react-native-vector-icons it is required to perform some more steps.
+3. For specify libraries such as react-native-reanimated and react-native-vector-icons it is required to perform some more steps in case you are running it on ios.
 
 ![Home page](https://raw.githubusercontent.com/SufyaanKhateeb/AssignmentInvSky/main/assets/img/investsky1.png)
 
