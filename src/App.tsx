@@ -1,20 +1,21 @@
-import * as React from 'react'
-import { StyleSheet } from 'react-native'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { GraphPage } from './screens/GraphPage'
-import StockDetails from './screens/StockDetails'
+import * as React from "react";
+import { StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import Navigation from "./navigation";
 
 export default function App() {
   return (
-    <GestureHandlerRootView style={styles.container}>
-      {/* <GraphPage /> */}
-      <StockDetails />
-    </GestureHandlerRootView>
-  )
+    <NavigationContainer>
+      <GestureHandlerRootView style={styles.container}>
+        <Navigation />
+      </GestureHandlerRootView>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-})
+});

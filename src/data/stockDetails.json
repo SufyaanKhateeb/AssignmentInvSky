@@ -101,6 +101,8 @@
                     "price": 98.90
                 }
             ],
+            "currentPrice": 143.5,
+            "percentageGain": 30,
             "closePrice": 143.85,
             "marketValue": 2.38e+12,
             "outstandingShares": 16500000000
@@ -206,6 +208,8 @@
                     "price": 98.90
                 }
             ],
+            "currentPrice": 109.5,
+            "percentageGain": 20,
             "closePrice": 108.59,
             "marketValue": 1.94e+12,
             "outstandingShares": 690000000

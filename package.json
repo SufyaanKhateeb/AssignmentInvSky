@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@react-native-segmented-control/segmented-control": "^2.4.0",
+    "@react-navigation/native": "^6.1.7",
+    "@react-navigation/native-stack": "^6.9.13",
     "@shopify/react-native-skia": "^0.1.197",
     "@types/gaussian": "^1.2.0",
     "gaussian": "^1.2.0",
@@ -21,6 +23,8 @@
     "react-native-haptic-feedback": "^1.13.1",
     "react-native-pressable-scale": "^1.0.6",
     "react-native-reanimated": "^3.3.0",
+    "react-native-safe-area-context": "^4.7.1",
+    "react-native-screens": "^3.22.1",
     "react-native-static-safe-area-insets": "^2.2.0",
     "react-native-svg": "^13.10.0"
   },
